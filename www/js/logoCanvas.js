@@ -8,7 +8,7 @@ esmfamil.classy.controller({
     htmlCanvas = document.getElementById('canvas');
     htmlCanvas.width = xWindow;
     htmlCanvas.height = yWindow;
-    return draw();
+    return this.draw();
   },
   draw: function() {
     var canvas, ctx, lineargradient1, lineargradient2, lineargradient3, lineargradient4, logoLeftPadding, logoTopPadding, xScale, xTranslate, xWindow, yTranslate, yWindow;
@@ -23,16 +23,16 @@ esmfamil.classy.controller({
     if (canvas.getContext) {
       ctx = canvas.getContext("2d");
       lineargradient1 = ctx.createLinearGradient(xWindow, yWindow, xWindow / 3, yWindow / 3);
-      lineargradient1.addColorStop(0, 'rgba(40,60,120,0.8)');
+      lineargradient1.addColorStop(0, 'rgba(40,60,120,0.9)');
       lineargradient1.addColorStop(1, 'rgba(0,0,0,0.1)');
       lineargradient2 = ctx.createLinearGradient(0, yWindow, (2 * xWindow) / 3, yWindow / 3);
-      lineargradient2.addColorStop(0, 'rgba(10,40,80,0.8)');
+      lineargradient2.addColorStop(0, 'rgba(10,40,80,0.9)');
       lineargradient2.addColorStop(1, 'rgba(0,0,0,0)');
       lineargradient3 = ctx.createLinearGradient(0, 0, (2 * xWindow) / 3, (2 * yWindow) / 3);
-      lineargradient3.addColorStop(0, 'rgba(20,120,100,0.8)');
+      lineargradient3.addColorStop(0, 'rgba(20,120,100,0.9)');
       lineargradient3.addColorStop(1, 'rgba(0,0,0,0)');
       lineargradient4 = ctx.createLinearGradient(xWindow, 0, xWindow / 3, (2 * yWindow) / 3);
-      lineargradient4.addColorStop(0, 'rgba(30,160,120,0.8)');
+      lineargradient4.addColorStop(0, 'rgba(30,150,140,0.9)');
       lineargradient4.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = lineargradient1;
       ctx.fillRect(0, 0, xWindow, yWindow);
@@ -271,9 +271,20 @@ esmfamil.classy.controller({
       ctx.rotate(0);
       ctx.translate(-372.5625, -278.42468);
       ctx.closePath();
-      return ctx.stroke();
+      ctx.stroke();
+      ctx.restore();
+      ctx.shadowBlur = 0;
+      ctx.beginPath();
+      ctx.moveTo(logoLeftPadding - 10, logoTopPadding + 90.5);
+      ctx.lineTo(logoLeftPadding + 170, logoTopPadding + 90.5);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.restore();
+      ctx.font = "30px Cabin";
+      ctx.fillStyle = 'rgba(0,0,0,1)';
+      return ctx.fillText('esmfamil', logoLeftPadding + 30, logoTopPadding + 120);
     }
   }
 });
 
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=logoCanvas.js.map
