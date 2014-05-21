@@ -1,17 +1,16 @@
-h4 Do your review
+.center-align
+  h3 {{review.title}}
+  p زمان: {{review.time}}
 
-p Field to review: {{review.title}}
-p Remaining review time: {{review.time}}
-
-table
-  tr(ng-repeat="(id, field) in review.fields")
-    td
+ul.list
+  li.item.item-toggle(ng-repeat="(id, field) in review.fields")
+    .item.item-avatar
       img(ng-src="{{players[id].picture}}")
-      | {{players[id].name}}
-    td {{field.input}}
-    td
+      p {{players[id].name}}: {{field.input}}
+    label.toggle.toggle-dark
       input(type="checkbox"
         ng-model="field.acceptable"
-        ng-change="accept(id, field.acceptable)")
-      | Acceptable?
-
+        ng-change="accept(id, field.acceptable)"
+      )
+      .track
+        .handle

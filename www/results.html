@@ -1,15 +1,15 @@
 
-<h2>Scores</h2>
-<table>
-  <tr>
-    <td></td>
-    <td ng-repeat="roundNum in rounds">{{roundNum}}</td>
-  </tr>
-  <tr ng-repeat="(playerId, playerData) in game">
-    <td>{{players[playerId].name}}</td>
-    <td ng-repeat="roundNum in rounds">{{playerData.score['r'+roundNum] || '-'}}</td>
-  </tr>
-</table>
-<div ng-show="admin">
-  <button type="button" ng-click="replay()">Do you want to play again?</button>
+<h3>امتیاز</h3>
+<div class="row">
+  <div class="col"></div>
+  <div ng-repeat="roundNum in rounds" class="col">{{roundNum}}</div>
 </div>
+<div ng-repeat="(playerId, playerData) in game" class="row">
+  <div class="col item item-avatar"><img ng-src="players[playerId].picture"/>
+    <p>{{players[playerId].name}}</p>
+  </div>
+  <div ng-repeat="roundNum in rounds" class="col">
+    <p>{{playerData.score['r'+roundNum] || '0'}}</p>
+  </div>
+</div>
+<button type="button" ng-show="admin" ng-click="replay()" class="button button-dark button-replay">آقا یه دست دیگه</button>

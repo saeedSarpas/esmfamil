@@ -1,12 +1,17 @@
-h2 Scores
+h3 امتیاز
 
-table
-  tr
-    td
-    td(ng-repeat='roundNum in rounds') {{roundNum}}
-  tr(ng-repeat='(playerId, playerData) in game')
-    td {{players[playerId].name}}
-    td(ng-repeat='roundNum in rounds') {{playerData.score['r'+roundNum] || '-'}}
+.row
+  .col
+  .col(ng-repeat="roundNum in rounds") {{roundNum}}
+.row(ng-repeat="(playerId, playerData) in game")
+  .col.item.item-avatar
+    img(ng-src="players[playerId].picture")
+    p {{players[playerId].name}}
+  .col(ng-repeat='roundNum in rounds')
+    p {{playerData.score['r'+roundNum] || '0'}}
 
-div(ng-show='admin')
-  button(type='button' ng-click='replay()') Do you want to play again?
+button.button.button-dark.button-replay(
+  type='button'
+  ng-show='admin'
+  ng-click='replay()'
+) آقا یه دست دیگه

@@ -1,18 +1,15 @@
 
-<p ng-hide="started">Wait for your friends to start the game</p>
 <div ng-show="started">
-  <div>Currently playing:
-    <div ng-repeat="player in players | currentlyPlaying:game"><img ng-src="{{player.picture}}"/>{{player.name}}</div>
+  <div class="bar bar-header">
+    <p>از حرف: {{letter}}</p>
+    <p>زمان: {{time}}</p>
   </div>
-  <p>Current letter: {{letter}}</p>
-  <p>Remaining time: {{time}}</p>
-  <table>
-    <tr ng-repeat="(name,field) in fields">
-      <td>{{name}}</td>
-      <td>
-        <input ng-model="field.value"/>
-      </td>
-    </tr>
-  </table>
-  <button type="button" ng-show="allFilled" ng-click="done()">Done</button>
+  <div class="list">
+    <label ng-repeat="(name,field) in fields" class="item item-input"><span class="input-label fields kamran">{{name}}</span>
+      <input ng-model="field.value" type="text"/>
+    </label>
+  </div>
+</div>
+<div class="bar bar-footer bar-dark">
+  <button type="button" ng-show="allFilled" ng-click="done()" class="button button-done kamran">آقا استپ</button>
 </div>

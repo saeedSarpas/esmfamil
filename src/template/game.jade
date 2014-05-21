@@ -1,16 +1,16 @@
-p(ng-hide="started") Wait for your friends to start the game
 
 div(ng-show="started")
-  div
-    | Currently playing:
-    div(ng-repeat="player in players | currentlyPlaying:game")
-      img(ng-src="{{player.picture}}")
-      | {{player.name}}
-  p Current letter: {{letter}}
-  p Remaining time: {{time}}
-  table
-    tr(ng-repeat="(name,field) in fields")
-      td {{name}}
-      td
-        input(ng-model="field.value")
-  button(type="button" ng-show="allFilled" ng-click="done()") Done
+  .bar.bar-header
+    p از حرف: {{letter}}
+    p زمان: {{time}}
+  .list
+    label.item.item-input(ng-repeat="(name,field) in fields")
+      span.input-label.fields.kamran
+        {{name}}
+      input(ng-model="field.value" type="text")
+
+.bar.bar-footer.bar-dark
+  button.button.button-done.kamran(
+    type='button'
+    ng-show="allFilled" ng-click="done()"
+  ) آقا استپ
