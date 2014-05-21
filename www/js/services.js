@@ -140,7 +140,8 @@ GoogleService = (function(_super) {
     return {
       id: user.id,
       name: user.displayName,
-      picture: user.thirdPartyUserData.picture
+      picture: user.thirdPartyUserData.picture,
+      provider: 'googleplus'
     };
   };
 
@@ -204,7 +205,8 @@ FacebookService = (function(_super) {
     return {
       id: user.id,
       name: user.displayName,
-      picture: this._pic_url(user.id)
+      picture: this._pic_url(user.id),
+      provider: 'facebook'
     };
   };
 

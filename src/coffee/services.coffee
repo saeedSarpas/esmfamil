@@ -79,6 +79,7 @@ class GoogleService extends LoginService
       id: user.id
       name: user.displayName
       picture: user.thirdPartyUserData.picture
+      provider: 'googleplus'
     }
 
   _processFriends: (friends) ->
@@ -104,6 +105,7 @@ class FacebookService extends LoginService
       id: user.id
       name: user.displayName
       picture: @_pic_url user.id
+      provider: 'facebook'
     }
 
   _pic_url: (id) ->

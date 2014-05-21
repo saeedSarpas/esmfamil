@@ -1,12 +1,26 @@
-h3 Available people
-div(ng-repeat="friend in players|onlineFriends:myself.friends")
-  a(href="" ng-click="invite(friend.id)")
-    img(ng-src="{{friend.picture}}")
-    | {{friend.name}}
-
-h3 Added people
-div(ng-repeat="participant in players|participants")
-  img(ng-src="{{participant.picture}}")
-  | {{participant.name}}
-
-a(ui-sref="game") Start
+ion-slide-box
+  ion-slide
+    .box
+      .list.padding-top
+        .center-align.kamran دوستان آنلاین
+        a.item.item-avatar(
+          ng-repeat="friend in players|onlineFriends:myself.friends"
+          ng-click="invite(friend.id)"
+        )
+          img(ng-src="{{friend.picture}}")
+          h2 {{friend.name}}
+          p | hala masalan ye texti
+  ion-slide
+    .box
+      .list.padding-top
+        .center-align.kamran دوستانی که دعوت کرده‌اید
+        .item.item-avatar(
+          ng-repeat="participant in players|participants"
+        )
+          img(ng-src="{{participant.picture}}")
+          h2 {{participant.name}}
+          p | hala masalan ye texti
+      .center-align.kamran
+        a.button.button-dark.button-start-game.kamran(
+          ui-sref="game"
+        ) شروع بازی

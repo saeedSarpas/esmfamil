@@ -1,5 +1,24 @@
 
-<h3>Available people</h3>
-<div ng-repeat="friend in players|onlineFriends:myself.friends"><a href="" ng-click="invite(friend.id)"><img ng-src="{{friend.picture}}"/>{{friend.name}}</a></div>
-<h3>Added people</h3>
-<div ng-repeat="participant in players|participants"><img ng-src="{{participant.picture}}"/>{{participant.name}}</div><a ui-sref="game">Start</a>
+<ion-slide-box>
+  <ion-slide>
+    <div class="box">
+      <div class="list padding-top">
+        <div class="center-align kamran">دوستان آنلاین</div><a ng-repeat="friend in players|onlineFriends:myself.friends" ng-click="invite(friend.id)" class="item item-avatar"><img ng-src="{{friend.picture}}"/>
+          <h2>{{friend.name}}</h2>
+          <p>| hala masalan ye texti</p></a>
+      </div>
+    </div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box">
+      <div class="list padding-top">
+        <div class="center-align kamran">دوستانی که دعوت کرده‌اید</div>
+        <div ng-repeat="participant in players|participants" class="item item-avatar"><img ng-src="{{participant.picture}}"/>
+          <h2>{{participant.name}}</h2>
+          <p>| hala masalan ye texti</p>
+        </div>
+      </div>
+      <div class="center-align kamran"><a ui-sref="game" class="button button-dark button-start-game kamran">شروع بازی</a></div>
+    </div>
+  </ion-slide>
+</ion-slide-box>

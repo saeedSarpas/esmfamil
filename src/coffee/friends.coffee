@@ -2,6 +2,11 @@
 esmfamil.classy.controller
   name: 'friendsCtrl'
 
+  inject: ['$scope', 'myself']
+
+  init: ->
+    @$.myself = @myself
+
 esmfamil.classy.controller
   name: 'friendsNewgameCtrl'
 
