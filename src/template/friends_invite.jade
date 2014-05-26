@@ -1,7 +1,7 @@
-ion-slide-box
+ion-slide-box(ng-controller="SlideBox")
   ion-slide
     .box
-      .list.padding-top
+      .list
         .center-align.kamran دوستان آنلاین
         a.item.item-avatar(
           ng-repeat="friend in players|onlineFriends:myself.friends"
@@ -12,7 +12,7 @@ ion-slide-box
           p | hala masalan ye texti
   ion-slide
     .box
-      .list.padding-top
+      .list
         .center-align.kamran دوستانی که دعوت کرده‌اید
         .item.item-avatar(
           ng-repeat="participant in players|participants"

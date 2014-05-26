@@ -1,12 +1,12 @@
 .center-align
   h3 {{review.title}}
-  p زمان: {{review.time}}
+  p.kamran زمان: {{review.time}}
 
 ul.list
   li.item.item-toggle(ng-repeat="(id, field) in review.fields")
     .item.item-avatar
       img(ng-src="{{players[id].picture}}")
-      p {{players[id].name}}: {{field.input}}
+      p.kamran {{players[id].name}}: {{field.input}}
     label.toggle.toggle-dark
       input(type="checkbox"
         ng-model="field.acceptable"

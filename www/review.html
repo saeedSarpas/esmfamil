@@ -1,12 +1,12 @@
 
 <div class="center-align">
   <h3>{{review.title}}</h3>
-  <p>زمان: {{review.time}}</p>
+  <p class="kamran">زمان: {{review.time}}</p>
 </div>
 <ul class="list">
   <li ng-repeat="(id, field) in review.fields" class="item item-toggle">
     <div class="item item-avatar"><img ng-src="{{players[id].picture}}"/>
-      <p>{{players[id].name}}: {{field.input}}</p>
+      <p class="kamran">{{players[id].name}}: {{field.input}}</p>
     </div>
     <label class="toggle toggle-dark">
       <input type="checkbox" ng-model="field.acceptable" ng-change="accept(id, field.acceptable)"/>

@@ -5,6 +5,12 @@ canvas(id="canvas" ng-controller="logo")
   با اکانت خود در شبکه‌های اجتماعی لاگین کنید
   hr
 
-.buttons-container
-  a(class="button button-facebook icon-left ion-social-facebook" ng-click="login('facebook')") Login
-  a(class="button button-googleplus icon-left ion-social-googleplus" ng-click="login('google')") Login
+.buttons-container.cabin
+  a.button.button-facebook.icon-left.ion-social-facebook(
+    ng-click="login('facebook')"
+  )
+    .cabin Login
+  a.button.button-googleplus.icon-left.ion-social-googleplus(
+    ng-click="login('google')"
+  )
+    .cabin Login
