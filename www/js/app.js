@@ -1,7 +1,7 @@
 var esmfamil,
   __slice = [].slice;
 
-esmfamil = angular.module('esmfamil', ['firebase', 'classy', 'ui.router']);
+esmfamil = angular.module('esmfamil', ['esmfamil.directive', 'firebase', 'classy', 'ui.router']);
 
 esmfamil.config(function($stateProvider, $urlRouterProvider) {
   var loadStates;

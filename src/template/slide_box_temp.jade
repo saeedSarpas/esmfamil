@@ -1,0 +1,27 @@
+ion-slide-box
+  ion-slide
+    .box
+      .list
+        .centered-align.kamran
+          دوستان آنلاین
+        a.item.item-avatar(
+          ng-repeat="friend in players"
+          ng-click="invite(friend.id)"
+        )
+          img(ng-src="{{friend.picture}}")
+          h2.cabin {{friend.name}}
+          p.cabin | {{friend.displayName}}
+  ion-slide
+    .box
+      .list
+        .centered-align.kamran
+          دوستانی که دعوت کرده‌اید
+        .item.item-avatar(
+          ng-repeat="participant in players|participants"
+        )
+          img(ng-src="{{participant.picture}}")
+          h2 {{participant.name}}
+          p | {{participant.displayName}}
+      .centered-align.kamran
+        a.button.button-dark.button-start-game.kamran(ui-sref="game")
+          شروع بازی

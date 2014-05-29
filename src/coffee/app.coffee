@@ -1,4 +1,4 @@
-esmfamil = angular.module 'esmfamil', ['firebase', 'classy', 'ui.router']
+esmfamil = angular.module 'esmfamil', ['esmfamil.directive', 'firebase', 'classy', 'ui.router']
 
 esmfamil.config ($stateProvider, $urlRouterProvider) ->
   $urlRouterProvider.otherwise '/login'
